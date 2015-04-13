@@ -1,0 +1,115 @@
+<section data-ng-controller="HomeController">
+	<br>
+	<div class="jumbotron text-center">
+		<div class="row">
+			<div class="col-md-12 col-md-offset-0 col-sm-6 col-sm-offset-3 col-xs-12 text-center">
+				<!-- col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12
+				<img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/img/brand/logo.png" /> -->
+				<img alt="MEAN.JS" class="img-responsive" src="modules/core/img/brand/Typewriter_Mac.png" />
+				<h2><type><em>&nbsp; All the world is made of stories.</em></type></h2>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<p class="lead">
+				Become a <type>Storyteller</type> and create stories on your own or with collaborators.
+			</p>
+		</div>
+<!-- 		
+		<div class="row">
+			<p class="lead">
+				Explanation for the <type>Storyteller</type> app
+			</p>
+		</div>
+		<div class="row">
+			<h2>All the world is made of stories.</h2>
+			<p>This is a brief explanation page of what the thing is for/does.</p>
+		</div> -->
+
+	</div>
+	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+		<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
+			<li data-ng-repeat="item in menu.items | orderBy: 'position'" data-ng-if="item.shouldRender(authentication.user);" ng-switch="item.menuItemType" ui-route="{{item.uiRoute}}" class="{{item.menuItemClass}}" ng-class="{active: ($uiRoute)}" dropdown="item.menuItemType === 'dropdown'">
+				<a ng-switch-when="dropdown" class="dropdown-toggle" dropdown-toggle>
+					<span data-ng-bind="item.title"></span>
+					<b class="caret"></b>
+				</a>
+				<ul ng-switch-when="dropdown" class="dropdown-menu">
+					<li data-ng-repeat="subitem in item.items | orderBy: 'position'" data-ng-if="subitem.shouldRender(authentication.user);" ui-route="{{subitem.uiRoute}}" ng-class="{active: $uiRoute}">
+						<a href="/#!/{{subitem.link}}" data-ng-bind="subitem.title"></a>
+					</li>
+				</ul>
+				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="col-sm-8 blog-main">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>
+					<type><strong>Open Stories</strong></type>
+				</h2>
+				<p>Free for all! Start an open prompt or add to one, open stories can go literally (but not physcially) anywhere.</p>
+			</div>
+			<div class="col-md-4">
+				<h2>
+					<type><strong>Going Stag</strong></type>
+				</h2>
+				<p>Writing a story on your own, you can be in search for collaborators or just create something all by your lonesome.</p>
+			</div>
+			<div class="col-md-4">
+				<h2>
+					<type><strong>Collaborations</strong></type>
+				</h2>
+				<p>You can request/set up collabs with specific users. I think when I set up the writing document portion of the project there will be a multiple user authorization bit with chosen collaborators given edit/write permissions.</p>
+			</div>
+			<div class="col-md-12">
+				<hr>
+				<p>I'm not sure what other formats of writing exist, anyone, specific someones, no-ones-for-now-leading-to-specific-someones. I think that's it.</p>
+				<br>
+			</div>
+		</div>
+		<div class="well">
+			<h2>Now get to reading! (Or writing.)</h2>
+			<p>
+				In order of most recent:
+				<ul>
+					<li><a href="#">Title, original work, genre?, original author, date</a>
+					</li>
+					<li><a href="#">Title, based on preexisting material, genre, author, author, author..., date</a>
+					</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+
+	<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module">
+            <h4>Important places</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">First ever post thing ever, everyone who joins should add to it</a></li>
+              <li><a href="#">Helpful hints for getting started</a></li>
+              <li><a href="#">Guidelines, essentially don't be a jerk</a></li>
+              <li><hr></li>
+              <li><a href="#">Stories - Original</a></li>
+              <li><a href="#">Stories - Fanworks</a></li>
+              <li><a href="#">People</a></li>
+              <li><a href="#">Your stuff?</a></li>
+              <li><a href="#">I don't know</a></li>
+            </ol>
+          </div>
+          <br>
+          <div class="sidebar-module">
+            <h4>Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">I feel like I should organize the info so more things are here</a></li>
+              <li><a href="#">But I don't know what should be here</a></li>
+              <li><a href="#">Maybe... logged in favorites/profile stuff</a></li>
+            </ol>
+          </div>
+        </div>
+<!-- 
+	<br>It occurs to me all I've done is edit the header and change the text of the jumbotron example. I shall change it soon.
+	<br> -->
+</section>

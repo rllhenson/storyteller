@@ -1,0 +1,237 @@
+<section class="row" data-ng-controller="SettingsController" data-ng-init="findOne()">
+	 
+	<div class="col-12">
+		<br>
+		<br>
+		<tabset vertical="true" type="pills">
+
+	    	<tab class="move text-center" heading="Your Profile">
+			  	<div class="rightish">
+					<h3 class="text-center"><type>Your Profile</type></h3>
+					<hr>
+					<div class="tab">
+						<p><type>Username:</type></p>
+						<p data-ng-model="user.username">{{user.username}}</p>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Date Joined:</type></p>
+						<p data-ng-model="user.created">{{user.created | date:'MMMM d, yyyy'}}</p>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Original Prompts:</type></p>
+						<ul>
+							<li><a href="#">Story Title, organized by date written, newest first</a></li>
+							<li><a href="#">limit to ten</a></li>
+							<li><a href="#">... /<- clicking this takes you to their stories page where you can view all of their content</a></li>
+						</ul>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Collaborations:</type></p>
+						<ul>
+							<li><a href="#">Story Title, organized by date of user's first addition to story, oldest first</a></li>
+							<li><a href="#">limit to ten</a></li>
+							<li><a href="#">... /<- clicking this takes you to their story page as well</a></li>
+						</ul>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Friends: <- this might be problematic if based strictly on collabs</type></p>
+						<ul>
+							<li><a href="#">List of all friends/collaborators they've worked with</a></li>
+						</ul>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Faves:</type></p>
+						<ul>
+							<li><a href="#">List of their favorite stories</a></li>
+						</ul>
+						<br>
+					</div>
+				</div>
+	    	</tab>
+
+	    	<tab class="move text-center" heading="Your Stories">
+			  	<div class="rightish">
+			  		<h3 class="text-center"><type>Your Stories</type></h3>
+					<hr>
+					<div class="tab">
+						<p><type>Original Prompts:</type></p>
+						<ul>
+							<li><a href="#">Story oldest to newest</a></li>
+							<li><a href="#">list 10</a></li>
+							<li><a href="#">then paginated</a></li>
+						</ul>
+						<br>
+						<pagination total-items="35" items-per-page="10" ng-model="bigCurrentPage" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+    					<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+    					<br>
+					</div>
+					<br>
+					<div class="tab">
+						<p><type>Collaborations:</type></p>
+						<ul>
+							<li><a href="#">Story oldest to newest</a></li>
+							<li><a href="#">list 10</a></li>
+							<li><a href="#">then paginated</a></li>
+						</ul>
+						<br>
+						<pagination total-items="35" items-per-page="10" ng-model="bigCurrentPage" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+    					<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+    					<br>
+					</div>
+				</div>
+	    	</tab>
+
+	    	<tab class="move text-center" heading="Favorites">
+			  	<div class="rightish">
+			  		<h3 class="text-center"><type>Favorites</type></h3>
+					<hr>
+					<div class="tab">
+						<p><type>Favorite Stories:</type></p>
+						<ul>
+							<li><a href="#">Story oldest to newest</a></li>
+							<li><a href="#">list 10</a></li>
+							<li><a href="#">then paginated</a></li>
+						</ul>
+						<br>
+						<pagination total-items="35" items-per-page="10" ng-model="bigCurrentPage" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+    					<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+    					<br>
+					</div>
+					<br>
+					<div class="tab">
+						<p><type>Favorite Authors:</type></p>
+						<ul>
+							<li><a href="#">Story oldest to newest</a></li>
+							<li><a href="#">list 10</a></li>
+							<li><a href="#">then paginated</a></li>
+						</ul>
+						<br>
+						<pagination total-items="35" items-per-page="10" ng-model="bigCurrentPage" max-size="10" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+    					<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+    					<br>
+					</div>
+				</div>
+	    	</tab>
+
+	    	<hr class="movesee">
+
+	    	<tab class="move text-center" heading="Your Account">
+			  	<div class="rightish">
+			  		<h3 class="text-center"><type>Your Account</type></h3>
+					<hr>
+					<div class="tab">
+						<p><type>First Name:</type></p>
+						<p data-ng-model="user.firstName">{{user.firstName}}</p>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Last Name:</type></p>
+						<p data-ng-model="user.lastName">{{user.lastName}}</p>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Email:</type></p>
+						<p data-ng-model="user.email">{{user.email}}</p>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Username:</type></p>
+						<p data-ng-model="user.username">{{user.username}}</p>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Friends: <- this might be problematic if based strictly on collabs</type></p>
+						<ul>
+							<li><a href="#">List of all friends/collaborators they've worked with</a></li>
+						</ul>
+						<br>
+					</div>
+					<div class="tab">
+						<p><type>Faves:</type></p>
+						<ul>
+							<li><a href="#">List of their favorite stories</a></li>
+						</ul>
+						<br>
+					</div>
+				</div>
+	    	</tab>
+
+	    	<tab class="move text-center" heading="Edit Account">
+			  	<div class="rightish">			  		
+			  		<h3 class="text-center"><type>Edit Account Information</type></h3>
+					<hr>
+		  			<form name="userForm" data-ng-submit="updateUserProfile(userForm.$valid)" class="signin form-horizontal tab" autocomplete="off">
+						<fieldset>
+							<div class="form-group">
+								<label for="firstName">First Name</label>
+								<input type="text" id="firstName" name="firstName" class="form-control" data-ng-model="user.firstName" placeholder="user.firstName">
+							</div>
+							<div class="form-group">
+								<label for="lastName">Last Name</label>
+								<input type="text" id="lastName" name="lastName" class="form-control" data-ng-model="user.lastName" placeholder="user.lastName">
+							</div>
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" class="form-control" data-ng-model="user.email" placeholder="user.email">
+							</div>
+							<div class="form-group">
+								<label for="username">Username</label>
+								<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="user.username">
+							</div>
+							<div class="text-center form-group">
+								<button type="submit" class="btn btn-large btn-default">Save Profile</button>
+							</div>
+							<div data-ng-show="success" class="text-center text-success">
+								<strong>Profile Saved Successfully</strong>
+							</div>
+							<div data-ng-show="error" class="text-center text-danger">
+								<strong data-ng-bind="error"></strong>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+	    	</tab>
+
+
+
+	    	<tab class="move text-center" heading="Change Password">
+			  	<div class="rightish">			  		
+			  		<h3 class="text-center"><type>Change Password</type></h3>
+					<hr>
+	    			<form data-ng-submit="changeUserPassword()" class="signin form-horizontal tab" autocomplete="on">
+						<fieldset>
+							<div class="form-group">
+								<label for="currentPassword">Current Password</label>
+								<input type="password" id="currentPassword" name="currentPassword" class="form-control" data-ng-model="passwordDetails.currentPassword" placeholder="Current Password">
+							</div>
+							<div class="form-group">
+								<label for="newPassword">New Password</label>
+								<input type="password" id="newPassword" name="newPassword" class="form-control" data-ng-model="passwordDetails.newPassword" placeholder="New Password">
+							</div>
+							<div class="form-group">
+								<label for="verifyPassword">Verify Password</label>
+								<input type="password" id="verifyPassword" name="verifyPassword" class="form-control" data-ng-model="passwordDetails.verifyPassword" placeholder="Verify Password">
+							</div>
+							<div class="text-center form-group">
+								<button type="submit" class="btn btn-large btn-default">Save Password</button>
+							</div>
+							<div data-ng-show="success" class="text-center text-success">
+								<strong>Password Changed Successfully</strong>
+							</div>
+							<div data-ng-show="error" class="text-center text-danger">
+								<strong data-ng-bind="error"></strong>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</tab>
+	    	
+	  	</tabset>
+
+	</div>
+</section>

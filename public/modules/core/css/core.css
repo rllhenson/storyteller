@@ -1,0 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Special+Elite);
+
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
+}
+
+.navbar-brand{
+	font-family: 'Special Elite', cursive;
+	text-shadow: rgba(0, 0, 0, 0.5) 0px -1px 0px !important;
+	font-size: 1.7em;
+	/*color: rgb(51, 51, 51) !important;*/
+}
+
+type{
+	font-family: 'Special Elite', cursive;
+	font-weight: bold;
+}
+
+.jumbotron{
+	/*background: url('../img/brand/Typewriter_Mac.png');*/
+	background-color: white;
+}
+
+.jumbotron h2, .jumbotron img{
+	display: inline-block;
+}
+
+.vertical-center{
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+  	-webkit-transform: translateY(-50%);
+  	transform: translateY(-50%);
+}
+
+.inline{
+	display: inline-block;
+}
+
+.move{
+	position: absolute;
+	left: 0%;
+	width: 20%;
+	cursor: pointer;
+	font-family: 'Special Elite', cursive;
+	font-weight: bold;
+}
+
+.move a{
+	background-color: black !important;
+}
+
+.move a:hover{
+	color: rgb(217, 237, 247);
+}
+
+.move a, .rightish a{
+	color: rgb(157, 157, 157);
+}
+
+.rightish{
+	position: absolute;
+	top: 10%;
+	left: 30%;
+	width: 60%;
+}
+
+.movesee{
+	width: 20%;
+	position: relative;
+	left: -40%;
+}
+
+.tab{
+	margin-left: 5%;
+}
+
+.navbar-toggle{
+	border-color: rgb(157, 157, 157) !important;
+}
+
+.navbar-toggle:hover{
+	background-color: white !important;
+}
+
+.icon-bar{
+	background-color: rgb(157, 157, 157) !important;
+}

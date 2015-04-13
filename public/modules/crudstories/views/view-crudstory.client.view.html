@@ -1,0 +1,27 @@
+<section data-ng-controller="CrudstoriesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="crudstory.name"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="authentication.user" data-ng-hide="authentication.user._id == crudstory.user._id">
+	<!-- will incorporate crudstory.user._id -->
+		<button class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-paperclip">Favorite</i></button>
+		<button class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-comment">Comment</i></button>
+	</div>
+
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == crudstory.user._id))">
+		<a class="btn btn-default" href="/#!/crudstories/{{crudstory._id}}/edit">
+			<i class="glyphicon glyphicon-edit">Edit</i>
+		</a>
+		<a class="btn btn-default" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash">Remove</i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="crudstory.created | date:'mediumDate'"></span>
+			by
+			<a href="/#!/profile/{{user._username}}"><span data-ng-bind="crudstory.user.displayName"></span></a>
+		</em>
+	</small>
+</section>
