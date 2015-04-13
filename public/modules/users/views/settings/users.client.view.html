@@ -1,0 +1,27 @@
+<section data-ng-controller="SettingsController" data-ng-init="find()">
+
+<!-- only can see this page if you are logged in. I think it's becuase it's using find to only find the current user, but I don't know why that's happening -->
+<!-- my attempts to work around this have failed so far
+    <div data-ng-show="authentication.user">
+ -->        <div class="page-header">
+            <h1>Humans</h1>
+        </div>
+        <p><type>Username:</type></p>
+        <!-- find and find one only gives me current user -->
+        <a href="/#!/settings/profile">{{user.username}}</a>
+
+
+        <!-- I can see where this is being called and is commented ngRepeat user in users -->
+        <p><type>Username:</type></p>
+        <div data-ng-repeat="user in users">
+            <p>no</p>
+            <p>{{user.username}}</p>
+        </div>
+<!--     </div> -->
+
+
+    <!-- this would call when I had weirdness going on with the controller -->
+    <div class="alert alert-warning text-center" data-ng-hide="!users.$resolved || users.length">
+    	If for some reason I can't count the users, just go to your <a href="/#!/settings/profile">profile</a>.
+    </div>
+</section>

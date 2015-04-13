@@ -21,7 +21,8 @@
 			Posted on
 			<span data-ng-bind="crudstory.created | date:'mediumDate'"></span>
 			by
-			<a href="/#!/profile/{{user._username}}"><span data-ng-bind="crudstory.user.displayName"></span></a>
+			<!-- this display name is pulling the name of the individual rather than their username, which is something I will change, once I figure out where it is happening -->
+			<a href="/#!/settings/user-profile"><span data-ng-bind="crudstory.user.displayName"></span></a>
 		</em>
 	</small>
 </section>
